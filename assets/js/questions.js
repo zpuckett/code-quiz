@@ -95,8 +95,8 @@ function renderLastItem() {
         return
     }
     finishDiv.textContent = "";
-    var finaPageEl = document.querySelector(".final-page");
-    finaPageEl.style.visibility = "visible";
+    var finalPageEl = document.querySelector(".final-page");
+    finalPageEl.style.visibility = "visible";
     var initialAndScore = document.querySelector("#staticEmail");
     initialAndScore.value = yourInitial + ":" + " " + yourScore;
 
@@ -134,13 +134,12 @@ var hElement = document.querySelector("#title");
 var oderListEl = document.querySelector("#q-list");
 var finishDiv = document.querySelector(".finish-section");
 var finalScore = document.querySelector("#result");
-var errMsg = document.querySelector("#errorSmg");
 var initialInput = document.querySelector("#inputInitial").value;
 var submitEl = document.querySelector(".btn btn-primary mb-2");
 var responsDiv = document.querySelector("#response");
 var finaPageEl = document.querySelector(".final-page");
 var initialAndScore = document.querySelector("#staticEmail");
-var firstPageEl = document.querySelector(".first-page");
+var homePageEl = document.querySelector(".home-page");
 
 
 
