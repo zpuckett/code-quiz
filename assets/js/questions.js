@@ -95,37 +95,16 @@ function renderLastItem() {
         return
     }
     finishDiv.textContent = "";
-    var finalPageEl = document.querySelector(".final-page");
-    finalPageEl.style.visibility = "visible";
-    var initialAndScore = document.querySelector("#staticEmail");
+    var finaPageEl = document.querySelector(".final-page");
+    finaPageEl.style.visibility = "visible";
+    var initialAndScore = document.querySelector("#staticEmail2");
     initialAndScore.value = yourInitial + ":" + " " + yourScore;
 
 }
 
-//submit the initial and final score to the local storage
-document.addEventListener("submit", function (event) {
-    event.preventDefault();
-    var initialInput = document.querySelector("#inputInitial").value;
-    if (initialInput === "") {
-        errMsg.setAttribute("style", "color: orange")
-        errMsg.textContent = "Input field cannot be empty"
-    } else {
-        errMsg.textContent = "";
-        localStorage.getItem(initialInput)
-        localStorage.setItem("Initial", initialInput)
-        renderLastItem()
-    }
 
-})
-// go back function
-function init() {
-    location.reload();
 
-}
-// clear score
-function clearScore() {
-    initialAndScore.value = "";
-}
+//QUESTIONS
 var timeElement = document.querySelector("#time");
 var wrapperElement = document.querySelector(".wrapper");
 var btnElement = document.querySelector("#start");
@@ -134,12 +113,13 @@ var hElement = document.querySelector("#title");
 var oderListEl = document.querySelector("#q-list");
 var finishDiv = document.querySelector(".finish-section");
 var finalScore = document.querySelector("#result");
+var errMsg = document.querySelector("#errorMsg");
 var initialInput = document.querySelector("#inputInitial").value;
 var submitEl = document.querySelector(".btn btn-primary mb-2");
 var responsDiv = document.querySelector("#response");
 var finaPageEl = document.querySelector(".final-page");
 var initialAndScore = document.querySelector("#staticEmail");
-var homePageEl = document.querySelector(".home-page");
+var firstPageEl = document.querySelector(".first-page");
 
 
 
@@ -226,4 +206,28 @@ function displayQuestions() {
         event.addEventListener("click", onclickHandler)
     });
 
+}
+//submit the initial and final score to the local storage
+document.addEventListener("submit", function (event) {
+    event.preventDefault();
+    var initialInput = document.querySelector("#inputInitial").value;
+    if (initialInput === "") {
+        errMsg.setAttribute("style", "color: red")
+        errMsg.textContent = "Initial input field cannot be empty"
+    } else {
+        errMsg.textContent = "";
+        localStorage.getItem(initialInput)
+        localStorage.setItem("Initial", initialInput)
+         renderLastItem()
+    }
+
+})
+// go back function
+function init() {
+    location.reload();
+
+}
+// clear score
+function clearScore() {
+    initialAndScore.value = "";
 }
