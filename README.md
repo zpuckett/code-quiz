@@ -7,7 +7,7 @@ Timed quiz to test knowledge of JavaScript
 https://zpuckett.github.io/code-quiz/
 
 ## Website Image
-![Screenshot](./assets/Screen Shot 2021-03-13 at 11.18.49 AM.png)
+![Screenshot](assets/ssquiz.png)
 
 ## Created With:
 *CSS
