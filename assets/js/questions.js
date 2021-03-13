@@ -101,8 +101,31 @@ function renderLastItem() {
     initialAndScore.value = yourInitial + ":" + " " + yourScore;
 
 }
+//submit the initial and final score to the local storage
+document.addEventListener("submit", function (event) {
+    event.preventDefault();
+    var initialInput = document.querySelector("#inputInitial").value;
+    if (initialInput === "") {
+        errMsg.setAttribute("style", "color: red")
+        errMsg.textContent = "Initial input field cannot be empty"
+    } else {
+        errMsg.textContent = "";
+        localStorage.getItem(initialInput)
+        localStorage.setItem("Initial", initialInput)
+         renderLastItem()
+    }
 
+});
+// go back function
+function init() {
+    location.reload();
 
+}
+// clear score
+function clearScore() {
+    initialAndScore.value = "";
+    
+}
 
 //QUESTIONS
 var timeElement = document.querySelector("#time");
@@ -206,28 +229,4 @@ function displayQuestions() {
         event.addEventListener("click", onclickHandler)
     });
 
-}
-//submit the initial and final score to the local storage
-document.addEventListener("submit", function (event) {
-    event.preventDefault();
-    var initialInput = document.querySelector("#inputInitial").value;
-    if (initialInput === "") {
-        errMsg.setAttribute("style", "color: red")
-        errMsg.textContent = "Initial input field cannot be empty"
-    } else {
-        errMsg.textContent = "";
-        localStorage.getItem(initialInput)
-        localStorage.setItem("Initial", initialInput)
-         renderLastItem()
-    }
-
-})
-// go back function
-function init() {
-    location.reload();
-
-}
-// clear score
-function clearScore() {
-    initialAndScore.value = "";
 }
