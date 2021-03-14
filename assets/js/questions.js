@@ -171,8 +171,8 @@ var questions = [
     },
     {   
         title: "HTML element that can be accessed in a Javascript code: Choose the one that will return an array of elements",
-        choices: ["getElementsByClass(‘classname’)", "getlementByEId(‘idname’)",
-        "getElementsByTagName(‘tagname’)", "querySelectorAll()"],
+        choices: ["getElementsByClass(‘classname’)", "querySelectorAll()", "getlementByEId(‘idname’)",
+        "getElementsByTagName(‘tagname’)"],
         answer: "querySelectorAll()",
     }
 ]
